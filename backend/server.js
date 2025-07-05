@@ -14,7 +14,6 @@ dotenv.config({
 })
 
 const app = express();
-const PORT=process.env.PORT || 8000;
 
 
 
@@ -54,12 +53,12 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 
 // Start Server
-// const PORT=process.env.PORT || 5000;
+const PORT=process.env.PORT || 5000;
 
 
 connectDB()
 .then(()=>{
-    app.listen(process.env.PORT || 8000 , ()=>{
+    app.listen(PORT || 8000 , ()=>{
         console.log(`✅ Server is running at Port : ${process.env.PORT}`);
         
     })
