@@ -21,10 +21,9 @@ const app = express();
 // Middleware to handle CORS
 app.use(
     cors({
-        origin:process.env.CLIENT_URL,
+        origin:"https://taskme-coral.vercel.app",
         methods:["GET","POST","PUT","DELETE"],
         allowedHeaders:["content-type","Authorization"],
-        credentials: true,
     })
 );
 
