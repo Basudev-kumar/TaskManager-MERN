@@ -410,7 +410,7 @@ const getUserDashboardData = async (req, res) => {
       dueDate: { $lt: new Date() },
     });
     
-    console.log("Pending One: ",pendingTasks);
+    // console.log("Pending One: ",pendingTasks);
     
     // Task distribution by status
     const taskStatuses = ["Pending", "In Progress", "Completed"];
@@ -429,7 +429,7 @@ const getUserDashboardData = async (req, res) => {
     const taskDistribution = taskStatuses.reduce((acc, status) => {
       const formattedKey = status.replace(/\s+/g, "");
       acc[formattedKey] = taskDistributionRaw.find(item => item._id === status)?.count || 0;
-      console.log("Value of acc: ", acc);
+      // console.log("Value of acc: ", acc);
       
       return acc;
     }, {});
