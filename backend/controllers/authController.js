@@ -148,6 +148,8 @@ const updateUserProfile = async (req,res) => {
         user.name = req.body.name || user.name;
         user.email = req.body.email || user.email;
 
+        user.profileImageUrl = req.body.profileImageUrl || user.profileImageUrl;
+
         if(req.body.password){
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(req.body.password , salt);
