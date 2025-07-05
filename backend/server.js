@@ -21,7 +21,7 @@ const app = express();
 // Middleware to handle CORS
 app.use(
     cors({
-        origin:"https://taskme-vasu264kumar-gmailcoms-projects.vercel.app",
+        origin:"https://taskme-puce.vercel.app",
         methods:["GET","POST","PUT","DELETE"],
         allowedHeaders:["content-type","Authorization"],
     })
