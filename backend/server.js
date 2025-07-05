@@ -1,4 +1,4 @@
-require("dotenv").config();
+const dotenv=require("dotenv");
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -9,8 +9,13 @@ const userRoutes = require("./routes/userRoutes.js");
 const taskRoutes = require("./routes/taskRoutes.js");
 const reportRoutes = require("./routes/reportRoutes.js");
 
+dotenv.config({
+    path:"./.env"
+})
 
 const app = express();
+const PORT=process.env.PORT || 8000;
+
 
 
 
@@ -25,7 +30,7 @@ app.use(
 
 
 // Connect Database
-connectDB();
+// connectDB();
 
 
 // Middleware
@@ -49,7 +54,17 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 
 // Start Server
-const PORT=process.env.PORT || 5000;
-app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`);
-});
+// const PORT=process.env.PORT || 5000;
+
+
+connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 8000 , ()=>{
+        console.log(`✅ Server is running at Port : ${process.env.PORT}`);
+        
+    })
+})
+.catch((err)=>{
+    console.log("❌ MongoDB connection failed !!!", err);
+    
+})
