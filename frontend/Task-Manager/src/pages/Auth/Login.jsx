@@ -227,7 +227,7 @@ const Login = () => {
                   <polyline points="10 9 9 9 8 9"></polyline>
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold mb-4">Task Manager Pro</h3>
+              <h3 className="text-3xl font-bold mb-4">Task Me Pro</h3>
               <p className="text-indigo-100 text-lg leading-relaxed">
                 Simplify your workflow with our easy-to-use task management system. Work together with your team and increase productivity.
               </p>
