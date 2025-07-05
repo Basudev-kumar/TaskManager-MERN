@@ -1,0 +1,8 @@
+// routes/PrivateRoute.js
+import { Outlet } from 'react-router-dom';
+
+const PrivateRoute = ({allowedRoles}) => {
+  return <Outlet />
+}
+
+export default PrivateRoute;
